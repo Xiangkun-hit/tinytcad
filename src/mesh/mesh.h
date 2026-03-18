@@ -6,18 +6,21 @@
 class Mesh1D {
   // 私有成员变量：内部数据，外部不能直接访问（封装特性）
 private:
-  int node_num;                 // 网格总节点数
-  double x_start;               // 网格起始坐标
-  double x_end;                 // 网格结束坐标
+  int node_num_;                 // 网格总节点数
+  double x_start_;               // 网格起始坐标
+  double x_end_;                 // 网格结束坐标
   std::vector<double> x_coords; // 动态数组：存储所有节点的坐标
+  //私有方法：生成网格数据
+  void generateMesh();
 
   // 公有函数：外部可以调用的接口
 public:
+  // 默认构造：沿用之前的 10 节点 0~1 范围（兼容老代码）
   Mesh1D();
+  // 自定义构造：指定节点数、起始坐标、结束坐标
+  Mesh1D(int node_num, double start_x, double end_x);
   ~Mesh1D() = default;
 
-  // 创建均匀网格（核心函数）
-  void create_mesh();
   // 打印网格信息
   void print_mesh();
 

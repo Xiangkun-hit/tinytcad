@@ -11,8 +11,9 @@ int main() {
   utils.log_info("tinytcad 主程序启动成功");
 
   // ========== 2.网格模块 ==========
-  Mesh1D mesh;
-  mesh.create_mesh();
+  // 自定义：20个节点，坐标范围 0 ~ 2
+  Mesh1D mesh(20, 0.0, 2.0);
+  
   mesh.print_mesh();
 
   // ========== 3.求解器计算 ==========
