@@ -13,11 +13,11 @@ int main() {
   // ========== 2.网格模块 ==========
   // 自定义：20个节点，坐标范围 0 ~ 2
   Mesh1D mesh(20, 0.0, 2.0);
-  
   mesh.print_mesh();
 
   // ========== 3.求解器计算 ==========
   Solver solver;
+  solver.set_quadratic_model(); //切换模型
   // 从网格获取数据，传递给求解器
   solver.solve(mesh.get_x_coords(), mesh.get_node_num());
   // 打印求解结果
@@ -30,7 +30,7 @@ int main() {
   // std::cout << "====================" << std::endl;
   // std::cout << "tinytcad 框架运行成功" << std::endl;
   // std::cout << "====================" << std::endl;
-  utils.log_info("程序运行完成");
+  utils.log_success("仿真流程全完成");
   std::cout << "====================" << std::endl;
 
   return 0;

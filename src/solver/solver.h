@@ -9,7 +9,10 @@
 class Solver {
 private:
   // 存储计算结果（自动内存管理，安全！）
-  std::vector<double> result;
+  std::vector<double> result_;
+   // 计算模型枚举（线性 / 二次模型）
+  enum Model{LINEAR, QUADRATIC};
+  Model model_ = LINEAR;// 默认线性模型
 
 public:
   Solver() = default;
@@ -17,6 +20,10 @@ public:
 
   // 核心求解函数：接收网格坐标 + 节点数量
   void solve(const double *x_coords, int node_num);
+  //切换模型
+  void set_quadratic_model();
+  void set_linear_model();
+
   // 打印求解结果
   void print_result() const;
   // 获取结果（对外接口）
