@@ -49,14 +49,14 @@ make -j4
 src/tinytcad
 ```
 
-###项目目录结构
-- `tinytcad/`
-  - `src/`：核心源码目录
-    - `main.cpp`：主程序（命令行解析+仿真流程）
-    - `utils/`：工具模块（日志/时间戳）
-    - `mesh/`：网格模块（自定义参数+校验）
-    - `solver/`：求解器模块（双模型切换）
-    - `io/`：文件输出模块
-  - `CMakeLists.txt`：CMake 构建配置
-  - `.gitignore`：Git 忽略文件配置
-  - `README.md`：项目说明文档
+### 项目目录结构
+tinytcad/
+├── src/                     # 核心源码
+│   ├── main.cpp             # 主程序（命令行解析+仿真流程）
+│   ├── utils/               # 工具模块（日志/时间戳）
+│   ├── mesh/                # 网格模块（自定义参数+校验）
+│   ├── solver/              # 求解器模块（双模型切换）
+│   └── io/                  # 文件输出模块
+├── CMakeLists.txt           # 构建配置
+├── .gitignore               # Git 忽略文件
+└── README.md                # 项目说明
