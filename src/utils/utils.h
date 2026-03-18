@@ -4,6 +4,8 @@
 #ifndef TINYTCAD_UTILS_H
 #define TINYTCAD_UTILS_H
 
+#include <string>
+
 class Utils {
 public:
   Utils() = default;
@@ -19,6 +21,10 @@ public:
 
   // 打印错误信息（预留）
   void log_error(const char* msg) const;
+
+private:
+  // 获取系统时间字符串（给日志加时间戳）
+  std::string get_time_str() const;
 };
 
 #endif

@@ -1,11 +1,15 @@
 #include "mesh.h"
 #include <iostream>
+#include "../utils/utils.h"
 
 // 构造函数：初始化默认参数
 Mesh1D::Mesh1D() : node_num_(10), x_start_(0.0), x_end_(1.0){
   // vector 自动初始化，无需手动置空
   if(!check_valid()){
-    std::cerr << "错误：默认网格参数非法！" << std::endl;
+    // std::cerr << "错误：默认网格参数非法！" << std::endl;
+    //日志+退出
+    Utils utils;
+    utils.log_error("错误：默认网格参数非法！");
     exit(1);
   }
   generateMesh();
@@ -15,7 +19,10 @@ Mesh1D::Mesh1D() : node_num_(10), x_start_(0.0), x_end_(1.0){
 Mesh1D::Mesh1D(int node_num, double start_x, double end_x)
   : node_num_(node_num),x_start_(start_x),x_end_(end_x){
   if(!check_valid()){
-  std::cerr << "错误:网格参数非法!节点数≥2,起始坐标<结束坐标" << std::endl;
+  //std::cerr << "错误:网格参数非法!节点数≥2,起始坐标<结束坐标" << std::endl;
+  //日志+退出
+  Utils utils;
+  utils.log_error("错误:网格参数非法!节点数≥2,起始坐标<结束坐标");
   exit(1);
   }
   generateMesh();

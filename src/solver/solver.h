@@ -16,6 +16,9 @@ private:
 
 public:
   Solver() = default;
+  //禁用拷贝
+  Solver(const Solver&) = delete;
+  Solver& operator=(const Solver&) = delete;
   ~Solver() = default;
 
   // 核心求解函数：接收网格坐标 + 节点数量

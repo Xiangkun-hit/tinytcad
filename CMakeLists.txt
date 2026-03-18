@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # 项目名称：你自定义的 tinytcad
-PROJECT(TINYTCAD)
+project(tinytcad)
 
 # 使用 C++17 标准（强制，稳定）
 SET(CMAKE_CXX_STANDARD 17)

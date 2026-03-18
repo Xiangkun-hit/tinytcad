@@ -9,6 +9,9 @@ class Solver;
 class IO {
 public:
   IO() = default;
+  //禁用拷贝
+  IO(const IO&) = delete;
+  IO& operator=(const IO&) = delete;
   ~IO() = default;
 
   // 核心函数：将网格+求解结果写入文件

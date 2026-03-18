@@ -21,6 +21,10 @@ public:
   Mesh1D();
   // 自定义构造：指定节点数、起始坐标、结束坐标
   Mesh1D(int node_num, double start_x, double end_x);
+
+  //禁用拷贝
+  Mesh1D(const Mesh1D&) = delete;
+  Mesh1D& operator=(const Mesh1D&) = delete;
   ~Mesh1D() = default;
 
   // 打印网格信息
