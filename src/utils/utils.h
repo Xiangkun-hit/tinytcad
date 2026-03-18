@@ -1,3 +1,6 @@
+// src/utils/utils.h
+// 工具模块：日志打印、程序初始化
+// TCAD微型仿真框架
 #ifndef TINYTCAD_UTILS_H
 #define TINYTCAD_UTILS_H
 

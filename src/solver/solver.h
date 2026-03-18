@@ -1,3 +1,6 @@
+// src/solver/solver.h
+// 求解器模块：
+// TCAD微型仿真框架
 #ifndef TINYTCAD_SOLVER_H
 #define TINYTCAD_SOLVER_H
 

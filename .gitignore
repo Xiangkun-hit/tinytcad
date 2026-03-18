@@ -1,0 +1,21 @@
+# 编译输出文件夹
+build/
+cmake-build-debug/
+
+# 可执行文件
+src/tinytcad
+tinytcad
+
+# 仿真结果文件
+result.txt
+*.txt
+
+# 系统临时文件
+.DS_Store
+*.log
+*.o
+*.cmake
+
+# IDE 配置文件
+.vscode
+.idea
