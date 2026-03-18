@@ -13,12 +13,12 @@ public:
   void init();
 
   //打印普通日志信息
-  void log_info(const char* msg);
+  void log_info(const char* msg) const;
   //成功信息
-  void log_success(const char* msg);
+  void log_success(const char* msg) const;
 
   // 打印错误信息（预留）
-  void log_error(const char* msg);
+  void log_error(const char* msg) const;
 };
 
 #endif

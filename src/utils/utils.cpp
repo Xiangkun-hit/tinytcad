@@ -12,16 +12,16 @@ void Utils::init() {
 }
 
 //打印普通日志信息(WHITE)
-void Utils::log_info(const char* msg) {
+void Utils::log_info(const char* msg) const{
   // 专业格式输出 [模块名] 信息
   std::cout << WHITE << "[Utils INFO] " << msg << std::endl;
 }
 
-void Utils::log_success(const char* msg){
+void Utils::log_success(const char* msg) const{
   std::cout << GREEN << "[Utils SUCCESS] " << msg << std::endl;
 }
 
 // 打印错误信息（预留）
-void Utils::log_error(const char* msg) {
+void Utils::log_error(const char* msg) const{
   std::cout << "[Utils ERROR]" << msg << std::endl;
 }

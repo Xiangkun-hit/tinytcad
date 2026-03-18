@@ -12,6 +12,8 @@ private:
   std::vector<double> x_coords; // 动态数组：存储所有节点的坐标
   //私有方法：生成网格数据
   void generateMesh();
+  //参数校验
+  bool check_valid() const;
 
   // 公有函数：外部可以调用的接口
 public:
@@ -22,13 +24,16 @@ public:
   ~Mesh1D() = default;
 
   // 打印网格信息
-  void print_mesh();
-
+  void print_mesh() const;
   // getter 接口：外部获取网格数据（后面求解器要用）
   int get_node_num() const;
   // 获取数组指针（兼容后续计算）
   double *get_x_coords();
   const double *get_x_coords() const;
+
+  //获取参数（给IO模块使用）
+  double get_start_x() const;
+  double get_end_x() const;
 };
 
 #endif
