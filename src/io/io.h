@@ -6,15 +6,13 @@ class Mesh1D;
 class Solver;
 
 // 文件IO模块：负责结果导出
-class IO{
+class IO {
 public:
-    IO() = default;
-    ~IO() = default;
+  IO() = default;
+  ~IO() = default;
 
-    // 核心函数：将网格+求解结果写入文件
-    void write_file(const Mesh1D& mesh, const Solver& solver);
+  // 核心函数：将网格+求解结果写入文件
+  void write_file(const Mesh1D &mesh, const Solver &solver);
 };
-
-
 
 #endif
