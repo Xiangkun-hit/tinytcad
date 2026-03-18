@@ -30,7 +30,7 @@ void Solver::solve(const double *x_coords, int node_num) {
 // 打印求解结果
 void Solver::print_result() const {
   std::cout << "\n[Solver]数值求解完成！计算结果：" << std::endl;
-  for (int i = 0; i < result_.size(); i++) {
+  for (size_t i = 0; i < result_.size(); i++) {
     std::cout << " 节点 " << i << " : " << result_[i] << std::endl;
   }
 }
