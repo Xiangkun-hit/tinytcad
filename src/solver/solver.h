@@ -19,6 +19,10 @@ public:
   //禁用拷贝
   Solver(const Solver&) = delete;
   Solver& operator=(const Solver&) = delete;
+
+  //增加 移动构造+移动赋值
+  Solver(Solver&&) = default;
+  Solver& operator=(Solver&&) = default;
   ~Solver() = default;
 
   // 核心求解函数：接收网格坐标 + 节点数量

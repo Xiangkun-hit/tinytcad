@@ -7,9 +7,12 @@
 
 // 命令行参数用法提示
 void show_usage(){
-  std::cout << "用法: ./tinytcad [节点数] [起始坐标] [结束坐标]" << std::endl;
+  std::cout << "======================================" << std::endl;
+  std::cout << "用法: ./tinytcad [节点数] [起始坐标] [结束坐标] [模型]" << std::endl;
+  std::cout << "模型: 0=线性模型  1=二次模型 (默认0)" << std::endl;
   std::cout << "示例: ./tinytcad 20 0.0 2.0" << std::endl;
   std::cout << "默认: ./tinytcad (使用10节点 0~1范围)" << std::endl;
+  std::cout << "======================================" << std::endl;
 }
 
 int main(int argc, char* argv[]) {  //支持命令行参数
@@ -22,13 +25,28 @@ int main(int argc, char* argv[]) {  //支持命令行参数
   int node_num = 10;
   double start_x = 0.0;
   double end_x = 1.0;
-  if(argc == 4){
+  int model_type = 0;   // 0=线性 1=二次
+  if(argc == 5){
+    // 4个自定义参数：仅网格
+    node_num = std::atoi(argv[1]);
+    start_x = std::atof(argv[2]);
+    end_x = std::atof(argv[3]);
+    model_type = std::atoi(argv[4]);
+    utils.log_info("使用自定义网格+求解模型");
+  }else if(argc ==4){
+    // 3个自定义参数：仅网格
     node_num = std::atoi(argv[1]);
     start_x = std::atof(argv[2]);
     end_x = std::atof(argv[3]);
     utils.log_info("使用自定义网格参数");
   }else if (argc != 1){
+    // 参数错误
     show_usage();
+    return 1;
+  }
+  // 校验模型参数
+  if(model_type !=0 && model_type !=1){
+    utils.log_error("模型参数非法！仅支持 0/1");
     return 1;
   }
   
@@ -39,7 +57,14 @@ int main(int argc, char* argv[]) {  //支持命令行参数
 
   // ========== 3.求解器计算 ==========
   Solver solver;
-  solver.set_quadratic_model(); //切换模型
+  // 根据命令行参数切换模型
+  if(model_type ==1){
+    solver.set_quadratic_model();
+    utils.log_info("当前模型：二次模型");
+  } else{
+    solver.set_linear_model();
+    utils.log_info("当前模型：线性模型");
+  }
   // 从网格获取数据，传递给求解器
   solver.solve(mesh.get_x_coords(), mesh.get_node_num());
   // 打印求解结果

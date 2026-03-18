@@ -25,6 +25,10 @@ public:
   //禁用拷贝
   Mesh1D(const Mesh1D&) = delete;
   Mesh1D& operator=(const Mesh1D&) = delete;
+
+  //增加 移动构造+移动赋值
+  Mesh1D(Mesh1D&&) = default;
+  Mesh1D& operator=(Mesh1D&&) = default;
   ~Mesh1D() = default;
 
   // 打印网格信息

@@ -12,6 +12,10 @@ public:
   //禁用拷贝
   IO(const IO&) = delete;
   IO& operator=(const IO&) = delete;
+
+  //增加 移动构造+移动赋值
+  IO(IO&&) = default;
+  IO& operator=(IO&&) = default;
   ~IO() = default;
 
   // 核心函数：将网格+求解结果写入文件
