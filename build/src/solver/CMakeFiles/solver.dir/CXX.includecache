@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/Desktop/tinytcad/src/solver/solver.cpp
+solver.h
+/home/ubuntu/Desktop/tinytcad/src/solver/solver.h
+iostream
+-
+
+/home/ubuntu/Desktop/tinytcad/src/solver/solver.h
+vector
+-
+
