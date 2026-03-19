@@ -1,6 +1,7 @@
 #include "io.h"
 #include "../mesh/mesh.h"
 #include "../solver/solver.h"
+#include "../utils/utils.h"
 
 #include <fstream>
 #include <iostream>
@@ -14,10 +15,14 @@ void IO::write_file(const Mesh1D &mesh, const Solver &solver) {
     return;
   }
 
+  Utils utils;
+  utils.log_info("[IO] 开始输出结果到 result.txt");
+
   // 2. 获取数据
   int node_num = mesh.get_node_num();
   const double *coords = mesh.get_x_coords();
   const auto &result = solver.get_result();
+  if(solver.get_model_type() == ModelType::LINEAR)
 
   // 3. 写入文件标题
   file << "==========================" << std::endl;
