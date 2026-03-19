@@ -13,6 +13,13 @@ namespace py = pybind11;
 PYBIND11_MODULE(tinytcad_py, m) {
     m.doc() = "tinytcad 一维数值仿真框架 Python 接口";
 
+    // 绑定枚举
+    py::enum_<ModelType>(m, "ModelType")
+        .value("LINEAR", ModelType::LINEAR)
+        .value("QUADRATIC", ModelType::QUADRATIC)
+        .value("POSSION", ModelType::POSSION);
+
+
     // --------------------------
     // 绑定 Mesh1D
     // --------------------------
@@ -33,7 +40,9 @@ PYBIND11_MODULE(tinytcad_py, m) {
         .def("set_quadratic_model", &Solver::set_quadratic_model)
         .def("set_possion_model", &Solver::set_possion_model)
         .def("solve", &Solver::solve)
-        .def("print_result", &Solver::print_result);
+        .def("print_result", &Solver::print_result)
+        .def("get_potential", &Solver::get_potential)
+        .def("get_result", &Solver::get_result);
 
     // --------------------------
     // 绑定日志工具类

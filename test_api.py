@@ -1,9 +1,9 @@
 # 1. 添加编译好的模块路径
 import sys
-sys.path.append("./build/pythonapi")  # 关键：告诉Python去文件夹找模块
+sys.path.append("./build/pythonapi")  # 关键：告诉Python去文件夹找模块 
 
 # 2. 导入C++模块
-import tinytcad_py
+import tinytcad_py # type: ignore
 
 # ====================== 测试1：创建工具类 ======================
 utils = tinytcad_py.Utils()
