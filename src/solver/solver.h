@@ -30,7 +30,7 @@ public:
   ~Solver() = default;
 
   // 核心求解函数：接收网格坐标 + 节点数量
-  void solve(const double* x_coords, int node_num);
+  void solve(const std::vector<double>& x_coords, int node_num);
   //切换模型
   void set_quadratic_model();
   void set_linear_model();

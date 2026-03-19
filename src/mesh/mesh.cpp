@@ -65,12 +65,12 @@ int Mesh1D::get_node_num() const {
   return node_num_; 
 }
 // 获取数组指针（兼容后续计算）
-double *Mesh1D::get_x_coords() {
+std::vector<double>& Mesh1D::get_x_coords() {
   // vector 原生支持获取底层数组指针
-  return x_coords.data();
+  return x_coords;
 }
-const double *Mesh1D::get_x_coords() const { 
-  return x_coords.data(); 
+const std::vector<double>& Mesh1D::get_x_coords() const { 
+  return x_coords; 
 }
 
   //获取参数（给IO模块使用）

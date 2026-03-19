@@ -15,7 +15,7 @@ void Solver::set_possion_model(){
 }
 
 // 核心求解函数：接收网格坐标 + 节点数量
-void Solver::solve(const double* x_coords, int node_num) {
+void Solver::solve(const std::vector<double>& x_coords, int node_num) {
   // 1. 重置结果数组大小（和网格节点数一致）
   result_.resize(node_num);
 

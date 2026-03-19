@@ -36,8 +36,8 @@ public:
   // getter 接口：外部获取网格数据（后面求解器要用）
   int get_node_num() const;
   // 获取数组指针（兼容后续计算）
-  double *get_x_coords();
-  const double *get_x_coords() const;
+  std::vector<double>& get_x_coords();
+  const std::vector<double>& get_x_coords() const;
 
   //获取参数（给IO模块使用）
   double get_start_x() const;
