@@ -1,9 +1,9 @@
 import sys
 import os
-sys.path.append("./build/pythonapi") 
+sys.path.append("../build/pythonapi") 
 
-import tinytcad_py as tinytcad
-from tinytcad_py import ModelType
+import tinytcad_py as tinytcad # type: ignore
+from tinytcad_py import ModelType # type: ignore
 
 # 初始化
 utils = tinytcad.Utils()

@@ -1,8 +1,8 @@
 import sys
 import os
 sys.path.append("./build/pythonapi")
-import tinytcad_py as tinytcad 
-import matplotlib.pyplot as plt
+import tinytcad_py as tinytcad  # type: ignore
+import matplotlib.pyplot as plt # type: ignore
 
 # 计算
 mesh = tinytcad.Mesh1D(50, 0, 1)
