@@ -53,7 +53,6 @@ void IO::write_file(const Mesh1D &mesh, const Solver &solver) {
   }
 
   
-
   // 5. 关闭文件
   file.close();
   std::cout << "[IO] 结果已保存到 result.txt" << std::endl;
