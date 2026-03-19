@@ -14,7 +14,7 @@ PYBIND11_MODULE(tinytcad_py, m) {
     m.doc() = "tinytcad 一维数值仿真框架 Python 接口";
 
     // --------------------------
-    // 绑定 Mesh1D（只绑基础功能，无vector，不报错）
+    // 绑定 Mesh1D
     // --------------------------
     py::class_<Mesh1D>(m, "Mesh1D")
         .def(py::init<int, double, double>())  // 构造函数
@@ -25,7 +25,7 @@ PYBIND11_MODULE(tinytcad_py, m) {
         .def("print_mesh", &Mesh1D::print_mesh);
 
     // --------------------------
-    // 绑定 Solver（适配你的 POSSION 拼写）
+    // 绑定 Solver
     // --------------------------
     py::class_<Solver>(m, "Solver")
         .def(py::init<>())

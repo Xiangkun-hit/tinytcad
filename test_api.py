@@ -2,7 +2,7 @@
 import sys
 sys.path.append("./build/pythonapi")  # 关键：告诉Python去文件夹找模块
 
-# 2. 导入我们的C++模块
+# 2. 导入C++模块
 import tinytcad_py
 
 # ====================== 测试1：创建工具类 ======================
@@ -17,7 +17,7 @@ mesh.print_mesh()
 
 # ====================== 测试3：创建求解器 + 泊松模型 ======================
 solver = tinytcad_py.Solver()
-solver.set_possion_model()  # 严格用你的拼写
+solver.set_possion_model()  
 utils.log_info("开始求解泊松方程...")
 
 # 调用求解
